@@ -1,0 +1,7 @@
+C:\Users\QuocHuy\Source\Repos\DemoDesignPattern\Singleton\bin\Debug\Singleton.exe.config
+C:\Users\QuocHuy\Source\Repos\DemoDesignPattern\Singleton\bin\Debug\Singleton.exe
+C:\Users\QuocHuy\Source\Repos\DemoDesignPattern\Singleton\bin\Debug\Singleton.pdb
+C:\Users\QuocHuy\Source\Repos\DemoDesignPattern\Singleton\obj\Debug\Singleton.csprojResolveAssemblyReference.cache
+C:\Users\QuocHuy\Source\Repos\DemoDesignPattern\Singleton\obj\Debug\Singleton.csproj.CoreCompileInputs.cache
+C:\Users\QuocHuy\Source\Repos\DemoDesignPattern\Singleton\obj\Debug\Singleton.exe
+C:\Users\QuocHuy\Source\Repos\DemoDesignPattern\Singleton\obj\Debug\Singleton.pdb
