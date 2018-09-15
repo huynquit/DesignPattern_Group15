@@ -1,0 +1,7 @@
+E:\1. Tai Lieu\2_MTK\Demo\DesignPattern_Group15\DemoDesignPattern\AbstractFactory\bin\Debug\AbstractFactory.exe.config
+E:\1. Tai Lieu\2_MTK\Demo\DesignPattern_Group15\DemoDesignPattern\AbstractFactory\bin\Debug\AbstractFactory.exe
+E:\1. Tai Lieu\2_MTK\Demo\DesignPattern_Group15\DemoDesignPattern\AbstractFactory\bin\Debug\AbstractFactory.pdb
+E:\1. Tai Lieu\2_MTK\Demo\DesignPattern_Group15\DemoDesignPattern\AbstractFactory\obj\Debug\AbstractFactory.csprojResolveAssemblyReference.cache
+E:\1. Tai Lieu\2_MTK\Demo\DesignPattern_Group15\DemoDesignPattern\AbstractFactory\obj\Debug\AbstractFactory.csproj.CoreCompileInputs.cache
+E:\1. Tai Lieu\2_MTK\Demo\DesignPattern_Group15\DemoDesignPattern\AbstractFactory\obj\Debug\AbstractFactory.exe
+E:\1. Tai Lieu\2_MTK\Demo\DesignPattern_Group15\DemoDesignPattern\AbstractFactory\obj\Debug\AbstractFactory.pdb
