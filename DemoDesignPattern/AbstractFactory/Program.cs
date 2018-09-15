@@ -6,69 +6,58 @@ using System.Threading.Tasks;
 
 namespace AbstractFactory
 {
-   
 
-    class UIT  //Abstract Product
+
+    public interface Student  //Abstract Product
     {
-        public virtual void Info()
-        {
-        }
+        void Info();
     }
 
-    class CNPM : UIT    //Product
+    public class CNPM : Student    //Product
     {
-        public override void Info()
+        public void Info()
         {
             Console.WriteLine("Sinh vien khoa CNPM");
         }
     }
-    class HTTT : UIT    //Product
+    public class HTTT : Student    //Product
     {
-        public override void Info()
+        public void Info()
         {
             Console.WriteLine("Sinh vien khoa HTTT");
         }
     }
 
-    class USSH  //Abstract Product
+    public interface Employee  //Abstract Product
     {
-        public virtual void Info()
+        void Work();
+    }
+
+    public class DuLich : Employee     //Product
+    {
+        public void Work()
         {
+            Console.WriteLine("Nhan vien cong ty Du lich");
         }
     }
 
-    class DuLich : USSH     //Product
+    public class BaoChi : Employee    //Product
     {
-        public override void Info()
+        public void Work()
         {
-            Console.WriteLine("Sinh vien khoa Du lich");
+            Console.WriteLine("Nhan vien cong ty bao chi");
         }
     }
 
-    class BaoChi : USSH    //Product
+    public abstract class PeopleFactory      //Abstract Factory
     {
-        public override void Info()
-        {
-            Console.WriteLine("Sinh vien khoa Bao chi");
-        }
+        public abstract Student getStudent(string student);
+        public abstract Employee getEmployee(string employee);
     }
 
-    interface SinhVien      //Abstract Factory
+    public class StudentFactory : PeopleFactory    //Concrete Factory
     {
-        UIT GetSV_UIT(string _uit);
-        USSH GetSV_USSH(string _ussh);
-
-        void HeDaoTao();
-    }
-
-    class SVChinhQuy : SinhVien    //Concrete Factory
-    {
-        public void HeDaoTao()
-        {
-            Console.WriteLine("**************************************");
-            Console.WriteLine("He chinh quy");
-        }
-        public UIT GetSV_UIT(string _uit)
+        public override Student getStudent(string _uit)
         {   
             switch(_uit)
             {
@@ -81,25 +70,20 @@ namespace AbstractFactory
             }
         }
 
-        public USSH GetSV_USSH(string _ussh)
+        public override Employee getEmployee(string _ussh)
         {
             return null;
         }
     }
 
-    class SVTuXa : SinhVien   //Concrete Factory
+    public class EmployeeFactory : PeopleFactory   //Concrete Factory
     {
-        public void HeDaoTao()
-        {
-            Console.WriteLine("**************************************");
-            Console.WriteLine("He tu xa");
-        }
-        public UIT GetSV_UIT(string _uit)
+        public override Student getStudent(string _uit)
         {
             return null;
         }
 
-        public USSH GetSV_USSH(string _ussh)
+        public override Employee getEmployee(string _ussh)
         {
             switch (_ussh)
             {
@@ -111,20 +95,47 @@ namespace AbstractFactory
                     return null;
             }
         }
+
+    }
+
+    public class FactoryProducer
+    {
+        public static PeopleFactory getFactory(String choice)
+        {
+
+            if (choice.Equals("STUDENT"))
+            {
+                return new StudentFactory();
+
+            }
+            else if (choice.Equals("EMPLOYEE"))
+            {
+                return new EmployeeFactory();
+            }
+
+            return null;
+        }
     }
 
     class Program
     {
         static void Main(string[] args)
         {
-            SinhVien chinhquy = new SVChinhQuy();
-            SinhVien tuxa = new SVTuXa();
+            PeopleFactory studentFactory = FactoryProducer.getFactory("STUDENT");
 
-            chinhquy.HeDaoTao();
-            chinhquy.GetSV_UIT("CNPM").Info();
+            Student student1 = studentFactory.getStudent("CNPM");
+            student1.Info();
 
-            tuxa.HeDaoTao();
-            tuxa.GetSV_USSH("BaoChi").Info();
+            Student student2 = studentFactory.getStudent("HTTT");
+            student2.Info();
+
+            PeopleFactory employeeFactory = FactoryProducer.getFactory("EMPLOYEE");
+
+            Employee employee1 = employeeFactory.getEmployee("DuLich");
+            employee1.Work();
+
+            Employee employee2 = employeeFactory.getEmployee("BaoChi");
+            employee2.Work();
 
             Console.ReadKey();
         }
